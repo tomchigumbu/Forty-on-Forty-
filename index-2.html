@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44 on Burnside | Self-Catering Accommodation, Bulawayo</title>
+    <meta name="description" content="Stylish, fully self-catering accommodation at 44 Burnside Road, Bulawayo, Zimbabwe. The perfect home away from home.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --cream:        #f7f3ec;
+            --warm-white:   #fffaf4;
+            --sand:         #e8dece;
+            --brown-dark:   #3b2410;
+            --brown-mid:    #6b3f1e;
+            --amber:        #9b7220;
+            --amber-light:  #c8952a;
+            --amber-pale:   #f0e0bb;
+            --text-dark:    #2d1f0f;
+            --text-mid:     #5c3d20;
+            --text-light:   #9a7c5e;
+            --white:        #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.65;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999;
+            padding: 0 2rem;
+            transition: background 0.35s, box-shadow 0.35s;
+        }
+        nav.scrolled {
+            background: rgba(59, 36, 16, 0.96);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+        .nav-logo small {
+            display: block;
+            font-size: 0.62rem;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--amber-pale);
+            font-weight: 300;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--amber-pale); }
+        .nav-book-btn {
+            background: var(--amber-light);
+            color: #fff !important;
+            padding: 0.5rem 1.3rem;
+            border-radius: 3px;
+            font-weight: 700 !important;
+            transition: background 0.2s !important;
+        }
+        .nav-book-btn:hover { background: var(--amber) !important; color: #fff !important; }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 6px;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px;
+            background: #fff; transition: all 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        #hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(160deg, rgba(10,30,10,0.55) 0%, rgba(20,50,15,0.4) 60%, rgba(10,40,10,0.25) 100%),
+                url('garden-1.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+        .hero-eyebrow {
+            display: inline-block;
+            border: 1px solid rgba(200,149,42,0.7);
+            color: var(--amber-pale);
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            padding: 0.4rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            color: #fff;
+            line-height: 0.95;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 0.3rem;
+        }
+        .hero-title span { color: var(--amber-pale); }
+        .hero-address {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            color: rgba(240,224,187,0.9);
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+        }
+        .hero-tagline {
+            color: rgba(255,255,255,0.75);
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 2.8rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--amber-light);
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: background 0.2s, transform 0.2s;
+            border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--amber); transform: translateY(-2px); }
+        .btn-ghost {
+            display: inline-block;
+            border: 1.5px solid rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+        .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hero-scroll::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.3);
+            animation: scrollLine 1.8s ease-in-out infinite;
+        }
+        @keyframes scrollLine {
+            0%,100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(0.5); }
+        }
+
+        /* ─── STATS STRIP ─── */
+        #stats {
+            background: var(--brown-dark);
+            padding: 2rem 1.5rem;
+        }
+        .stats-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+        .stat-item { padding: 0.5rem; }
+        .stat-icon { font-size: 1.6rem; margin-bottom: 0.3rem; }
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--amber-pale);
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(240,224,187,0.55);
+        }
+
+        /* ─── SHARED ─── */
+        section { padding: 5.5rem 1.5rem; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--amber-light);
+            margin-bottom: 0.4rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            color: var(--brown-dark);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .section-bar {
+            width: 50px; height: 2px;
+            background: var(--amber-light);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ─── ABOUT ─── */
+        #about { background: var(--warm-white); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--text-mid);
+            font-size: 1.05rem;
+            margin-bottom: 1.3rem;
+            line-height: 1.9;
+        }
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.8rem;
+        }
+        .badge {
+            border: 1px solid var(--sand);
+            background: var(--cream);
+            color: var(--brown-mid);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.45rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+        }
+        .about-img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 0.8rem;
+        }
+        .about-img-grid .img-main {
+            grid-column: 1; grid-row: 1 / 3;
+        }
+        .about-img-grid img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+        .about-img-grid .img-main img {
+            height: 100%;
+        }
+
+        /* ─── GALLERY ─── */
+        #gallery { background: var(--cream); padding: 5.5rem 1.5rem; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 280px 280px;
+            gap: 0.7rem;
+        }
+        .gallery-grid .g1 { grid-column: 1 / 6; grid-row: 1 / 3; }
+        .gallery-grid .g2 { grid-column: 6 / 9; grid-row: 1; }
+        .gallery-grid .g3 { grid-column: 9 / 13; grid-row: 1; }
+        .gallery-grid .g4 { grid-column: 6 / 10; grid-row: 2; }
+        .gallery-grid .g5 { grid-column: 10 / 13; grid-row: 2; }
+        .g-item {
+            overflow: hidden;
+            border-radius: 5px;
+            background: var(--sand);
+        }
+        .g-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .g-item:hover img { transform: scale(1.06); }
+        .gallery-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ─── AMENITIES ─── */
+        #amenities { background: var(--warm-white); }
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+        .amenity-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 6px;
+            padding: 1.5rem 1.2rem;
+            text-align: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .amenity-card:hover {
+            box-shadow: 0 8px 28px rgba(59,36,16,0.1);
+            transform: translateY(-3px);
+        }
+        .amenity-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .amenity-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            margin-bottom: 0.2rem;
+        }
+        .amenity-desc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* ─── RATES ─── */
+        #rates { background: var(--brown-dark); }
+        #rates .section-title { color: var(--amber-pale); }
+        #rates .section-label { color: rgba(200,149,42,0.8); }
+        #rates .section-bar { background: var(--amber-light); }
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+        }
+        .rate-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(200,149,42,0.3);
+            border-radius: 8px;
+            padding: 2rem 1.8rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .rate-card:hover {
+            border-color: rgba(200,149,42,0.7);
+            background: rgba(255,255,255,0.09);
+        }
+        .rate-card.featured {
+            border-color: var(--amber-light);
+            background: rgba(200,149,42,0.1);
+        }
+        .rate-card.featured::before {
+            content: 'Best Value';
+            position: absolute;
+            top: 0; right: 0;
+            background: var(--amber-light);
+            color: #fff;
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-bottom-left-radius: 6px;
+        }
+        .rate-label {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--amber-light);
+            margin-bottom: 0.6rem;
+        }
+        .rate-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+        .rate-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--amber-pale);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .rate-price sup {
+            font-size: 1.3rem;
+            vertical-align: super;
+        }
+        .rate-per {
+            font-size: 0.8rem;
+            color: rgba(240,224,187,0.5);
+            margin-bottom: 1.5rem;
+        }
+        .rate-includes {
+            list-style: none;
+            margin-bottom: 1.8rem;
+        }
+        .rate-includes li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.75);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .rate-includes li::before {
+            content: '✓';
+            color: var(--amber-light);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .rates-note {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(240,224,187,0.45);
+            font-style: italic;
+        }
+        .rates-cta {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
+        .btn-airbnb {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #FF5A5F;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-airbnb:hover { background: #e04a50; transform: translateY(-2px); }
+
+        /* ─── CONTACT ─── */
+        #contact { background: var(--warm-white); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .contact-row {
+            display: flex;
+            gap: 1.1rem;
+            align-items: flex-start;
+        }
+        .c-icon {
+            width: 46px; height: 46px; min-width: 46px;
+            background: var(--amber-pale);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            border: 1px solid var(--amber-light);
+        }
+        .c-label {
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.2rem;
+        }
+        .c-value {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        .c-value a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .c-value a:hover { color: var(--amber-light); }
+        .map-wrap {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 50px rgba(59,36,16,0.15);
+        }
+        .map-wrap iframe {
+            width: 100%; height: 430px;
+            border: none; display: block;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #1e0e04;
+            color: rgba(240,224,187,0.55);
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--amber-pale);
+            margin-bottom: 0.4rem;
+        }
+        .footer-logo small {
+            display: block;
+            font-size: 0.65rem;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(240,224,187,0.45);
+            font-weight: 300;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.2rem 0;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: rgba(240,224,187,0.5);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--amber-light); }
+        footer p { font-size: 0.78rem; margin-top: 0.4rem; }
+
+        /* ─── MOBILE ─── */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-img-grid { order: -1; height: 350px; }
+            .about-img-grid .img-main { grid-row: span 1; }
+            .about-img-grid .img-main img { height: 350px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(3, 220px);
+            }
+            .gallery-grid .g1 { grid-column: 1 / 3; grid-row: 1; }
+            .gallery-grid .g2 { grid-column: 1; grid-row: 2; }
+            .gallery-grid .g3 { grid-column: 2; grid-row: 2; }
+            .gallery-grid .g4 { grid-column: 1; grid-row: 3; }
+            .gallery-grid .g5 { grid-column: 2; grid-row: 3; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px; left: 0; right: 0;
+                background: rgba(59,36,16,0.98);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.3rem;
+            }
+            .nav-links.open { display: flex; }
+            .hero-scroll { display: none; }
+            .btn-ghost { display: none; }
+            .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+            .gallery-grid .g1,
+            .gallery-grid .g2,
+            .gallery-grid .g3,
+            .gallery-grid .g4,
+            .gallery-grid .g5 { grid-column: 1; grid-row: auto; }
+            .rates-grid { grid-template-columns: 1fr; }
+            .rates-cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+            44 on Burnside
+            <small>Bulawayo, Zimbabwe</small>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#rates">Rates</a></li>
+            <li><a href="#contact" class="nav-book-btn">Book Now</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero" style="position:relative;">
+    <div class="hero-eyebrow">Self-Catering Accommodation &mdash; Bulawayo</div>
+    <h1 class="hero-title"><span>44</span> on<br>Burnside</h1>
+    <p class="hero-address">44 Burnside Road &nbsp;&bull;&nbsp; Bulawayo, Zimbabwe</p>
+    <p class="hero-tagline">Your home away from home &mdash; comfort, privacy &amp; style</p>
+    <div class="hero-actions">
+        <a href="#rates" class="btn-primary">View Rates &amp; Book</a>
+        <a href="#gallery" class="btn-ghost">See the Property</a>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ─── STATS STRIP ─── -->
+<div id="stats">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Bedrooms</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Bathrooms</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Max Guests</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Entire Home</div>
+        </div>
+    </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="about-text">
+                <span class="section-label">Welcome</span>
+                <h2 class="section-title">A Peaceful Retreat in<br>the Heart of Burnside</h2>
+                <div class="section-bar"></div>
+                <p>Nestled in the leafy, sought-after suburb of Burnside, <strong>44 on Burnside</strong> is a beautifully appointed, fully self-catering home offering everything you need for a comfortable and memorable stay in Bulawayo.</p>
+                <p>Whether you are visiting on business, exploring Zimbabwe&rsquo;s second city, or simply looking for a relaxing getaway, this entire property is yours to enjoy &mdash; private, secure, and fully equipped from arrival to departure.</p>
+                <p>Wake up to birdsong in a quiet residential neighbourhood, just minutes from Burnside&rsquo;s shops, restaurants, and Bulawayo&rsquo;s key attractions. Everything about 44 on Burnside is designed to feel like home.</p>
+                <div class="about-badges">
+                    <span class="badge">Secure &amp; Gated</span>
+                    <span class="badge">Entire Property</span>
+                    <span class="badge">Fast WiFi</span>
+                    <span class="badge">Garden &amp; Braai</span>
+                    <span class="badge">Free Parking</span>
+                </div>
+            </div>
+            <div class="about-img-grid">
+                <div class="img-main">
+                    <img src="garden-1.jpg" alt="44 on Burnside garden" loading="lazy">
+                </div>
+                <div>
+                    <img src="kitchen.jpg" alt="Fully equipped kitchen" loading="lazy">
+                </div>
+                <div>
+                    <img src="lounge.jpg" alt="Spacious lounge" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section id="gallery">
+    <div class="section-inner">
+        <span class="section-label">The Property</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="section-bar"></div>
+        <div class="gallery-grid">
+            <div class="g-item g1">
+                <img src="garden-1.jpg" alt="Garden with thatched lapa and stepping stones" loading="lazy">
+            </div>
+            <div class="g-item g2">
+                <img src="garden-2.jpg" alt="Tropical garden border planting" loading="lazy">
+            </div>
+            <div class="g-item g3">
+                <img src="kitchen.jpg" alt="Fully equipped kitchen" loading="lazy">
+            </div>
+            <div class="g-item g4">
+                <img src="lounge.jpg" alt="Spacious lounge with garden views" loading="lazy">
+            </div>
+            <div class="g-item g5">
+                <img src="garden-2.jpg" alt="Lush garden grounds" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── AMENITIES ─── -->
+<section id="amenities">
+    <div class="section-inner">
+        <span class="section-label">What&rsquo;s Included</span>
+        <h2 class="section-title">Amenities &amp; Features</h2>
+        <div class="section-bar"></div>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-name">High-Speed WiFi</div>
+                <div class="amenity-desc">Fast, reliable internet throughout the property</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Fully Equipped Kitchen</div>
+                <div class="amenity-desc">Fridge, stove, microwave, cookware &amp; utensils</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">3 Bedrooms</div>
+                <div class="amenity-desc">Master en-suite, plus two comfortable rooms</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">DStv / Smart TV</div>
+                <div class="amenity-desc">Full DStv bouquet in the lounge</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Air Conditioning</div>
+                <div class="amenity-desc">Climate control in bedrooms and living areas</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Braai / BBQ Area</div>
+                <div class="amenity-desc">Outdoor braai stand in the private garden</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Secure Gated Property</div>
+                <div class="amenity-desc">Electric fence, security gate &amp; outdoor lighting</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Free Off-Street Parking</div>
+                <div class="amenity-desc">Secure parking inside the property gates</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Laundry</div>
+                <div class="amenity-desc">Washing machine, iron &amp; ironing board</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Private Garden</div>
+                <div class="amenity-desc">Spacious outdoor garden &amp; patio area</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Towels &amp; Linen</div>
+                <div class="amenity-desc">Fresh linen and towels provided on arrival</div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-name">Backup Power</div>
+                <div class="amenity-desc">Generator / inverter for load-shedding cover</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── RATES ─── -->
+<section id="rates">
+    <div class="section-inner">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Rates &amp; Booking</h2>
+        <div class="section-bar"></div>
+        <div class="rates-grid">
+            <div class="rate-card">
+                <div class="rate-label">Short Stay</div>
+                <div class="rate-name">1 &ndash; 2 Nights</div>
+                <div class="rate-price"><sup>$</sup>90</div>
+                <div class="rate-per">per night &bull; entire property</div>
+                <ul class="rate-includes">
+                    <li>Up to 6 guests</li>
+                    <li>All amenities included</li>
+                    <li>Fresh linen &amp; towels</li>
+                    <li>Self check-in</li>
+                </ul>
+                <a href="https://wa.me/263774542888?text=Hi%2C%20I%27d%20like%20to%20book%2044%20on%20Burnside" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">Enquire via WhatsApp</a>
+            </div>
+            <div class="rate-card featured">
+                <div class="rate-label">Extended Stay</div>
+                <div class="rate-name">3 + Nights</div>
+                <div class="rate-price"><sup>$</sup>75</div>
+                <div class="rate-per">per night &bull; entire property</div>
+                <ul class="rate-includes">
+                    <li>Up to 6 guests</li>
+                    <li>All amenities included</li>
+                    <li>Fresh linen &amp; towels</li>
+                    <li>Self check-in</li>
+                    <li>Discounted weekly rate available</li>
+                </ul>
+                <a href="https://wa.me/263774542888?text=Hi%2C%20I%27d%20like%20to%20book%2044%20on%20Burnside%20for%203%2B%20nights" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">Enquire via WhatsApp</a>
+            </div>
+        </div>
+        <p class="rates-note">* Prices are indicative. Contact us directly for current availability, group rates, and long-stay discounts. Update these rates with your actual pricing.</p>
+        <div class="rates-cta">
+            <a href="https://wa.me/263774542888?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%2044%20on%20Burnside" target="_blank" rel="noopener" class="btn-whatsapp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.564 4.14 1.544 5.875L0 24l6.277-1.518A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 01-5.012-1.376l-.36-.214-3.727.902.939-3.618-.234-.372A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                WhatsApp Us
+            </a>
+            <a href="https://www.airbnb.com/s/Bulawayo--Zimbabwe/homes" target="_blank" rel="noopener" class="btn-airbnb">
+                Book on Airbnb
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+    <div class="section-inner">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Contact &amp; Directions</h2>
+        <div class="section-bar"></div>
+        <div class="contact-grid">
+            <div class="contact-details">
+                <div class="contact-row">
+                    <div class="c-icon" style="font-size:0.75rem;font-weight:700;font-family:'Lato',sans-serif;letter-spacing:1px;">ADR</div>
+                    <div>
+                        <div class="c-label">Address</div>
+                        <div class="c-value">44 Burnside Road<br>Burnside, Bulawayo<br>Zimbabwe</div>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="c-icon" style="font-size:0.75rem;font-weight:700;font-family:'Lato',sans-serif;letter-spacing:1px;">TEL</div>
+                    <div>
+                        <div class="c-label">Phone &amp; WhatsApp</div>
+                        <div class="c-value">
+                            <a href="tel:+263774542888">+263 77 454 2888</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="c-icon" style="font-size:0.75rem;font-weight:700;font-family:'Lato',sans-serif;letter-spacing:1px;">WA</div>
+                    <div>
+                        <div class="c-label">WhatsApp Booking</div>
+                        <div class="c-value">
+                            <a href="https://wa.me/263774542888?text=Hi%2C%20I%27d%20like%20to%20book%2044%20on%20Burnside" target="_blank" rel="noopener">Message us on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="c-icon" style="font-size:0.75rem;font-weight:700;font-family:'Lato',sans-serif;letter-spacing:1px;">IG</div>
+                    <div>
+                        <div class="c-label">Instagram</div>
+                        <div class="c-value">
+                            <a href="https://www.instagram.com/44onburnside/" target="_blank" rel="noopener">@44onburnside</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:0.8rem;">Check-in / Check-out</div>
+                    <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+                        <div>
+                            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--amber-light);font-weight:600;line-height:1;">14:00</div>
+                            <div style="font-size:0.78rem;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;">Check-in</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--amber-light);font-weight:600;line-height:1;">10:00</div>
+                            <div style="font-size:0.78rem;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;">Check-out</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-wrap">
+                <iframe
+                    src="https://maps.google.com/maps?q=44+Burnside+Road,+Bulawayo,+Zimbabwe&hl=en&z=15&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="44 on Burnside location">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="footer-logo">
+        44 on Burnside
+        <small>Self-Catering Accommodation &mdash; Bulawayo, Zimbabwe</small>
+    </div>
+    <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#rates">Rates</a></li>
+        <li><a href="https://www.instagram.com/44onburnside/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://wa.me/263774542888" target="_blank" rel="noopener">WhatsApp</a></li>
+    </ul>
+    <p>44 Burnside Road, Bulawayo, Zimbabwe &nbsp;&bull;&nbsp; +263 77 454 2888</p>
+    <p style="margin-top:0.8rem;">&copy; 2025 44 on Burnside. All rights reserved.</p>
+</footer>
+
+<script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks   = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+</script>
+
+</body>
+</html>
